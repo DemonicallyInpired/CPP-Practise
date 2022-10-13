@@ -501,6 +501,11 @@ void Enumerators(Symbolic_constants c1){
   cout << random << endl; 
   int pp = static_cast<Symbolic_constants1>(133); 
   cout << pp << endl; //range decided in the same fashion as mention above. 
+  //since the enum class doesn't implicitly converts to integral type much like the plain enums, we can't really perform any sort of bitwise operator on such types without explicit conversion to the required integral types. 
+  #ifdef errror_With_bitwise
+  cout << (c11 & c2) << endl; 
+  #endif
+  cout << (static_cast<int>(c11) & static_cast<int>(c2)) << endl; 
 }
 void use_Enumerators(){
   cout << __FUNCTION__ << " " << __LINE__ << endl; 
